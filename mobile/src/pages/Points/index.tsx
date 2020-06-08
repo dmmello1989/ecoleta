@@ -1,13 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Constants from 'expo-constants';
 import { Feather as Icon } from '@expo/vector-icons';
 import { useNavigation } from '@react-navigation/native';
 import { StyleSheet, View, Text, Image, TouchableOpacity, ScrollView } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 import { SvgUri } from 'react-native-svg';
+import api from '../../services/api';
+
+interface Item {
+  id: number;
+  title: string;
+  image_url: string;
+}
 
 const Points = () => {
+  const [items, setItems] = useState<Item[]>([]);
+  const [selectedItems, setSelectedItems] = useState<number[]>([]);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    api.get('items').then(res => {
+      setItems(res.data);
+    })
+  }, []);
 
   function handleNavigateBack() {
     navigation.goBack();
@@ -15,6 +30,17 @@ const Points = () => {
 
   function handleNavigateDetail() {
     navigation.navigate('Detail');
+  }
+
+  function handleSelectedItem(id: number) {
+    const alreadySelected = selectedItems.findIndex(item => item === id);
+
+    if(alreadySelected >= 0) {
+      const filteredItems = selectedItems.filter(item => item !== id);
+      setSelectedItems(filteredItems);
+    } else {
+      setSelectedItems([ ...selectedItems, id ]);
+    }
   }
 
   return (
@@ -55,32 +81,22 @@ const Points = () => {
         <ScrollView  
           contentContainerStyle={{ paddingHorizontal: 30 }}
           showsHorizontalScrollIndicator={false} 
-          horizontal>
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.item} onPress={() => {}}>
-            <SvgUri width={42} height={42} uri="http://192.168.0.16:3333/uploads/organicos.svg" />
-            <Text style={styles.itemTitle}>Lixo</Text>
-          </TouchableOpacity>
+          horizontal
+        >
+          {items.map(item => (
+            <TouchableOpacity 
+              key={String(item.id)} 
+              style={[
+                styles.item,
+                selectedItems.includes(item.id) ? styles.selectedItem : {}
+              ]} 
+              onPress={() => handleSelectedItem(item.id)}
+              activeOpacity={0.6}
+            >
+              <SvgUri width={42} height={42} uri={item.image_url} />
+              <Text style={styles.itemTitle}>{item.title}</Text>
+            </TouchableOpacity>
+          ))}
         </ScrollView>
       </View>
     </>
