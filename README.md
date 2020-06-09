@@ -1,32 +1,4 @@
-<h1 align="center">
-    <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/banner.png" />
-</h1>
-
-<h4 align="center"> 
-	🚧 NextLevelWeek 1.0 🚀 em construção... 🚧
-</h4>
-
-<p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/leon-carvalho/Ecoleta?color=%2304D361">
-
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/leon-carvalho/Ecoleta">
-
-  	
-  <a href="https://www.linkedin.com/in/leonardo-dev/">
-    <img alt="Made by leon-carvalho" src="https://img.shields.io/badge/made%20by-leon--carvalho-%2304D361">
-  </a>
-	
-  
-  <a href="https://github.com/leon-carvalho/Ecoleta/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/leon-carvalho/Ecoleta">
-  </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/leon-carvalho/Ecoleta/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/leon-carvalho/Ecoleta?style=social">
-  </a>
-</p>
-
+#### Ecoleta
 
 ## 💻 About this project
 
@@ -51,17 +23,17 @@ Users will be able to:
 ### Mobile
 
 <p align="center">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/home-mobile.png" width="200px">
-
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/detalhes-mobile.svg" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./github/home-mobile.png" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./github/find-mobile.png" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./github/details-mobile.png" width="200px">
 </p>
 
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/web.svg" width="400px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./github/home-web.png" width="400px">
 
-  <img alt="NextLevelWeek" title="#NextLevelWeek" src="./github-assets/sucesso-web.svg" width="400px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./github/details-web.png" width="400px">
 </p>
 
 ## 🛠 Technologies
@@ -100,7 +72,7 @@ $ cd backend
 $ npm install
 
 # Execute application
-$ npm start
+$ npm run dev
 
 # Server will run on port :3333
 ```
