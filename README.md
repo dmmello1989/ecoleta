@@ -33,7 +33,7 @@ Users will be able to:
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
   <img alt="Ecoleta" title="#Ecoleta" src=".github/home-web.png" width="400px">
 
-  <img alt="Ecoleta" title="#Ecoleta" src=".github/details-web.png" width="400px">
+  <img alt="Ecoleta" title="#Ecoleta" src=".github/details-webcrop.png" width="400px">
 </p>
 
 ## 🛠 Technologies
