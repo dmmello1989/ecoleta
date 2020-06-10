@@ -1,5 +1,5 @@
 import React, { useEffect, useState, ChangeEvent, FormEvent } from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FiArrowLeft } from 'react-icons/fi';
 import { Map, TileLayer, Marker } from 'react-leaflet';
 import axios from 'axios';
@@ -40,7 +40,10 @@ const CreatePoint = () => {
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0, 0]);
   const [initialPosition, setInitialPosition] = useState<[number, number]>([0, 0]);
 
-  const history = useHistory();
+  const [success, setSuccess] = useState({
+    map: '',
+    modal: 'modal-hidden',
+  });
 
   useEffect(() => {
     api.get('items').then(res => {
@@ -133,16 +136,20 @@ const CreatePoint = () => {
       items
     };
 
-    await api.post('points', data);
-    alert('Collection point successfully registered.');
+    setSuccess({
+      map: 'map-hidden',
+      modal: 'modal'
+    })
 
-    history.push('/');
+    await api.post('points', data);
   }
 
   return(
     <div id="page-create-point">
       <header>
-        <img src={logo} alt="Ecoleta"/>
+        <Link to='/'>
+          <img src={logo} alt="Ecoleta"/>
+        </Link>
 
         <Link to='/'>
           <FiArrowLeft />
@@ -196,7 +203,12 @@ const CreatePoint = () => {
             <span>Select the address on the map</span>
           </legend>
 
-          <Map center={initialPosition} zoom={15} onClick={handleMapClick}>
+          <Map 
+            className={success.map}
+            center={initialPosition}
+            zoom={15} 
+            onClick={handleMapClick}
+          >
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -250,10 +262,26 @@ const CreatePoint = () => {
           Register Collection Point
         </button>
       </form>
+      
+      {/* Success Modal */}
+      <div id="hide" className={success.modal}>
+        <div className="content">
+          <div className="left">
+            <main>
+              <h1>Success! The collection point has been registered.</h1>
+
+              <Link to="/">
+                <span>
+                  <FiArrowLeft />
+                </span>
+                <strong>Return to Home</strong>
+              </Link>
+            </main>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
 
 export default CreatePoint;
-
-// 1:10:00
