@@ -1,4 +1,4 @@
-#### Ecoleta
+# Ecoleta
 
 ## 💻 About this project
 
@@ -23,15 +23,15 @@ Users will be able to:
 ### Mobile
 
 <p align="center">
-  <img alt="Ecoleta" title="#Ecoleta" src="./github/home-mobile.png" width="200px">
-  <img alt="Ecoleta" title="#Ecoleta" src="./github/find-mobile.png" width="200px">
-  <img alt="Ecoleta" title="#Ecoleta" src="./github/details-mobile.png" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="home-mobile.png" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="find-mobile.png" width="200px">
+  <img alt="Ecoleta" title="#Ecoleta" src="details-mobile.png" width="200px">
 </p>
 
 ### Web
 
 <p align="center" style="display: flex; align-items: flex-start; justify-content: center;">
-  <img alt="Ecoleta" title="#Ecoleta" src="./github/home-web.png" width="400px">
+  <img alt="Ecoleta" title="#Ecoleta" src="./home-web.png" width="400px">
 
   <img alt="Ecoleta" title="#Ecoleta" src="./github/details-web.png" width="400px">
 </p>
