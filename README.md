@@ -40,11 +40,11 @@ Users will be able to:
 
 The following technologies were used in the construction of the project:
 
-- [Expo][expo]
-- [Node.js][nodejs]
-- [React][reactjs]
-- [React Native][rn]
-- [TypeScript][typescript]
+- Node.js
+- Expo
+- React.js
+- React Native
+- TypeScript
 
 
 ## How to Execute the Application 
