@@ -1,8 +1,8 @@
 # Ecoleta
 
-## 💻   About this project
+## About this project
 
-♻️  Ecoleta brings together companies and entities that collect all sorts of recyclable waste and people who need to dispose of their waste in an ecological way.
+Ecoleta brings together companies and entities that collect all sorts of recyclable waste and people who need to dispose of their waste in an ecological way.
 
 Companies/entities can register on the web platform by uploading:
 - an image of the collection point' location;
@@ -36,7 +36,7 @@ Users will be able to:
   <img alt="Ecoleta" title="#Ecoleta" src=".github/details-webcrop.png" width="400px">
 </p>
 
-## 🛠 Technologies
+## Technologies
 
 The following technologies were used in the construction of the project:
 
@@ -47,14 +47,14 @@ The following technologies were used in the construction of the project:
 - [TypeScript][typescript]
 
 
-## 🚀   How to Execute the Application 
+## How to Execute the Application 
 
 This project is separated in three parts:
 1. Back End (backend) 
 2. Front End (frontend folder)
 3. Mobile (mobile folder)
 
-💡   Both Front End and Mobile need the Back End to be running to work.
+Both Front End and Mobile need the Back End to be running to work.
 
 ### Back End
 
@@ -107,6 +107,6 @@ $ npm start
 # Open Expo App and scan the QRCode to run the application on your phone
 ```
 
-## 📝   License
+## License
 
 This project is under MIT license.
